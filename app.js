@@ -11,7 +11,16 @@ function agregarAmigo() {
     else {
         amigos.push(nombre);
         inputNombre.value = '';
-        console.log(amigos);
+        mostrarLista();
     }
+}
 
+function mostrarLista() {
+    let inputLista = document.getElementById('listaAmigos');
+    inputLista.innerHTML = '';
+    for (let index = 0; index < amigos.length; index++) {
+        console.log(amigos[index]);
+        let nombre = '<li>' + amigos[index] + '</li>';
+        inputLista.innerHTML += nombre;
+    }
 }
